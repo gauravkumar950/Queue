@@ -28,7 +28,7 @@ public class CircularQueue {
             }
             rear = (rear+1)%size;
             arr[rear] = data;
-            System.out.println(rear);
+
         }
         public void delete(){
             if(isEmpty()){
@@ -43,10 +43,22 @@ public class CircularQueue {
                 return;
             }
             System.out.println("Elemnts of Stack is: ");
-            for(int i = 0;i<arr.length;i++){
-                System.out.print(arr[i]);
+            if(front<rear){
+                for(int i = front;i<arr.length;i++){
+                    System.out.print(arr[i]);
+                }
+                System.out.println();
             }
-            System.out.println();
+            else {
+                for (int i = front; i < arr.length; i++) {
+                    System.out.print(arr[i]);
+                }
+                for (int i = 0; i <= rear; i++) {
+                    System.out.print(arr[i]);
+                }
+
+                System.out.println();
+            }
         }
     }
     public static void main(String[] args) {
